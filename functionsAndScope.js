@@ -37,6 +37,7 @@ let pasta = "Capellini"
 function changePasta(){
     pasta = "Linguini"
 }
+changePasta()
 // What will the value of "pasta" be now? Print out the value of the "pasta" variable using console.log() and find out!
 
 /* Deliverable # 3:
