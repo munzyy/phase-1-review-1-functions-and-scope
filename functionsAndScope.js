@@ -1,10 +1,22 @@
+
+
 // Deliverable # 1 - Write the code to declare a function named "sum" that adds two numbers together.
+
+function sum (num1,num2) {
+    return (num1 + num2);
+}
+    
+
+    // function to add two numbers together
+
 
 /*
  * Your code goes here
  */
 
 // Deliverable # 2 - Write the code to invoke (call) your "sum" function.
+sum(3,5);
+
 
 /*
  * Your code goes here
@@ -24,14 +36,17 @@ console.log("Time is up!")
 
 // Print out the value of the "day" variable here using console.log(), and notice what happens in the console.
 
+
 // Exercise # 2 - Function Scope: What happens when you try to console log the value of "iceCreamFlavor" inside the "createIceCream" function vs outside of the function?
 let iceCreamFlavor = "Strawberry"
 function createIceCream(iceCreamFlavor){
+    console.log("exercise2",iceCreamFlavor);
     // Print out the value of the "iceCreamFlavor" variable here using console.log(), and notice what happens in the console.
 }
+
 createIceCream("Matcha")
 // Print out the value of the "iceCreamFlavor" variable here using console.log(), and notice what happens in the console.
-
+console.log("aftercreatematcha", iceCreamFlavor);
 // Exercise # 3 - Global Scope: What happens when you create a variable in global scope and change that variable's value inside of a function or block of code?
 let pasta = "Capellini"
 function changePasta(){
@@ -39,7 +54,7 @@ function changePasta(){
 }
 changePasta()
 // What will the value of "pasta" be now? Print out the value of the "pasta" variable using console.log() and find out!
-
+console.log("global", pasta);
 /* Deliverable # 3:
  * Step 1 - Declare a function named "guacamoleMaker" that accepts a function as its parameter.
  * Step 2 - Declare a function named "mixIngredients" that prints the string "Mixing Ingredients..." to the console.
@@ -50,6 +65,17 @@ changePasta()
 /*
  * Your code goes here
  */
+function guacamoleMaker () {
+    mixIngredients();
+    console.log("All done!");
+};
+function mixIngredients () {
+    console.log("Mixing ingredients...");
+}
+
+guacamoleMaker(mixIngredients);//callback function
+
+/*  
 
 /* Deliverable # 4:
  * Step 1 - Declare a function named "playASport".
@@ -61,3 +87,10 @@ changePasta()
 /*
  * Your code goes here
  */
+function playASport() {
+    function playSoccer () {console.log("GOAL!!!")};
+        return playSoccer;
+    }
+
+ let sports = playASport ();
+ sports();
